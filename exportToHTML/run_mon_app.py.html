@@ -1,0 +1,52 @@
+<html>
+<head>
+<title>run_mon_app.py</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<style type="text/css">
+.s0 { color: #5f826b; font-style: italic;}
+.s1 { color: #bcbec4;}
+.s2 { color: #cf8e6d;}
+.s3 { color: #6aab73;}
+.s4 { color: #bcbec4;}
+.s5 { color: #7a7e85;}
+</style>
+</head>
+<body bgcolor="#1e1f22">
+<table CELLSPACING=0 CELLPADDING=5 COLS=1 WIDTH="100%" BGCOLOR="#606060" >
+<tr><td><center>
+<font face="Arial, Helvetica" color="#000000">
+run_mon_app.py</font>
+</center></td></tr></table>
+<pre><span class="s0">&quot;&quot;&quot;Point de départ de l'application 
+Fichier : run_mon_app.py 
+Auteur : OM 2023.03.25 
+ 
+Définition et paramètres du microframework FLASK 
+ 
+Exemples : https://flask.palletsprojects.com/en/2.1.x/quickstart/#a-minimal-application 
+ 
+&quot;&quot;&quot;</span>
+
+<span class="s2">from </span><span class="s1">APP_FILMS_164 </span><span class="s2">import </span><span class="s1">app</span>
+<span class="s2">from </span><span class="s1">APP_FILMS_164 </span><span class="s2">import </span><span class="s1">SECRET_KEY_FLASK</span>
+<span class="s2">from </span><span class="s1">APP_FILMS_164 </span><span class="s2">import </span><span class="s1">DEBUG_FLASK</span>
+<span class="s2">from </span><span class="s1">APP_FILMS_164 </span><span class="s2">import </span><span class="s1">ADRESSE_SRV_FLASK</span>
+<span class="s2">from </span><span class="s1">APP_FILMS_164 </span><span class="s2">import </span><span class="s1">PORT_FLASK</span>
+<span class="s2">from </span><span class="s1">flask_cors </span><span class="s2">import </span><span class="s1">CORS</span>
+
+<span class="s3">&quot;&quot;&quot;Pour comprendre à quoi sert CORS... et en cas de curiosité maladive... 
+ne PAS cliquer sur le lien ci-dessous, car c'est bien expliqué. 
+https://developer.mozilla.org/fr/docs/Web/HTTP/CORS 
+&quot;&quot;&quot;</span>
+<span class="s1">CORS</span><span class="s4">(</span><span class="s1">app</span><span class="s4">)</span>
+
+<span class="s2">if </span><span class="s1">__name__ </span><span class="s4">== </span><span class="s3">'__main__'</span><span class="s4">:</span>
+    <span class="s5"># OM 2023.03.25</span>
+    <span class="s5"># Les variables d'environnement de FLASK sont définies dans le fichier &quot;.env&quot;</span>
+    <span class="s5"># Une clé est nécessaire pour crypter les &quot;cookies&quot; utilisés par les messages FLASH.</span>
+    <span class="s1">app</span><span class="s4">.</span><span class="s1">secret_key </span><span class="s4">= </span><span class="s1">SECRET_KEY_FLASK</span>
+    <span class="s5"># DEBUG_FLASK   inutile de vous dire que c'est insdipensable ... avant la version finale</span>
+    <span class="s1">app</span><span class="s4">.</span><span class="s1">run</span><span class="s4">(</span><span class="s1">debug</span><span class="s4">=</span><span class="s1">DEBUG_FLASK</span><span class="s4">, </span><span class="s1">host</span><span class="s4">=</span><span class="s1">ADRESSE_SRV_FLASK</span><span class="s4">, </span><span class="s1">port</span><span class="s4">=</span><span class="s1">PORT_FLASK</span><span class="s4">)</span>
+</pre>
+</body>
+</html>
